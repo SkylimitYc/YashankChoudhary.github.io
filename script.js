@@ -38,7 +38,13 @@ const panelContent = {
           <p>
             A personal portfolio built to present my skills, projects, and growth in a cleaner,
             more professional way while also giving me room to practice deployment workflows.
-          </p>
+           <h3> Portfolio Deployment (DevOps Project)<br></h3>
+            - Built using HTML, CSS, JavaScript<br>
+            - Containerized using Docker<br>
+            - Deployed locally via Nginx container<br>
+            - Hosted on cloud using Render<br>
+            - Accessible globally via public URL<br>
+            </p>
         </div>
         <div class="context-window__card">
           <h3>DevOps Practice</h3>
