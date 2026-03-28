@@ -1,9 +1,10 @@
 const rotatingTitles = [
   "Cloud Engineer",
-  "DevOps Builder",
-  "CI/CD Learner",
-  "Infrastructure Focused",
+  "DevOps Enthusiast",
+  "Automation Focused",
+  "Infrastructure Driven",
 ];
+
 
 const panelContent = {
   me: {
