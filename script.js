@@ -1,4 +1,9 @@
-
+const rotatingTitles = [
+  "Cloud Engineer",
+  "DevOps Enthusiast",
+  "Automation Focused",
+  "Infrastructure Driven",
+];
 
 
 const panelContent = {
