@@ -5,7 +5,6 @@ const rotatingTitles = [
   "Infrastructure Driven",
 ];
 
-
 const panelContent = {
   me: {
     eyebrow: "Me",
@@ -29,6 +28,7 @@ const panelContent = {
       </div>
     `,
   },
+
   projects: {
     eyebrow: "Projects",
     title: "Things I build",
@@ -37,26 +37,38 @@ const panelContent = {
         <div class="context-window__card">
           <h3>Portfolio Website</h3>
           <p>
-            A personal portfolio built to present my skills, projects, and growth in a cleaner,
-            more professional way while also giving me room to practice deployment workflows.
-           <h3> Portfolio Deployment (DevOps Project)<br></h3>
-            - Built using HTML, CSS, JavaScript<br>
-            - Containerized using Docker<br>
-            - Deployed locally via Nginx container<br>
-            - Hosted on cloud using Render<br>
-            - Accessible globally via public URL<br>
-            </p>
-        </div>
-        <div class="context-window__card">
-          <h3>DevOps Practice</h3>
-          <p>
-            I am using this project to strengthen my Git workflow, Docker usage, and deployment
-            thinking so the site is not just designed well, but also easier to ship and maintain.
+            A modern personal portfolio built to showcase my skills, projects, and growth in
+            DevOps and Cloud technologies through a clean and interactive interface.
           </p>
+          <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Git, Docker</p>
+          <p><strong>Key Highlights:</strong></p>
+          <ul class="context-window__list">
+            <li>Responsive and interactive portfolio design</li>
+            <li>Dark and light theme support</li>
+            <li>Professional project and skills showcase</li>
+            <li>Deployed online for public access</li>
+          </ul>
+        </div>
+
+        <div class="context-window__card">
+          <h3>Portfolio Deployment (DevOps Project)</h3>
+          <p>
+            This project helped me practice real DevOps workflows by taking a frontend site
+            from development to containerization and cloud deployment.
+          </p>
+          <p><strong>What I did:</strong></p>
+          <ul class="context-window__list">
+            <li>Managed source code using Git and GitHub</li>
+            <li>Containerized the project using Docker</li>
+            <li>Served the app through an Nginx container</li>
+            <li>Deployed the project on Render</li>
+            <li>Enabled CI/CD for smoother updates</li>
+          </ul>
         </div>
       </div>
     `,
   },
+
   skills: {
     eyebrow: "Skills",
     title: "What I bring",
@@ -81,6 +93,31 @@ const panelContent = {
       </div>
     `,
   },
+
+  experience: {
+    eyebrow: "Experience",
+    title: "Professional Experience",
+    body: `
+      <div class="context-window__grid">
+        <div class="context-window__card">
+          <h3>Current Role</h3>
+          <p>
+            Working at NPMC under the Ministry of Power, where I am gaining professional experience
+            in IT operations, support, and system-related workflows while continuing to grow toward
+            DevOps and Cloud Engineering.
+          </p>
+        </div>
+        <div class="context-window__card">
+          <h3>What it adds</h3>
+          <p>
+            This role has strengthened my discipline, troubleshooting ability, system understanding,
+            and confidence in working within real professional environments.
+          </p>
+        </div>
+      </div>
+    `,
+  },
+
   fun: {
     eyebrow: "Fun",
     title: "A little personality",
@@ -103,6 +140,7 @@ const panelContent = {
       </div>
     `,
   },
+
   contact: {
     eyebrow: "Contact",
     title: "Let's connect",
@@ -193,8 +231,19 @@ function updatePanel(key) {
     panelTitle.textContent = nextPanel.title;
     panelBody.innerHTML = nextPanel.body;
     panelFrame.classList.remove("is-updating");
+    panelFrame.classList.add("is-focused");
+
+    panelFrame.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+
+    setTimeout(() => {
+      panelFrame.classList.remove("is-focused");
+    }, 1200);
   }, 120);
 }
+
 
 function resetPanel() {
   if (!panelTitle || !panelEyebrow || !panelBody) {
