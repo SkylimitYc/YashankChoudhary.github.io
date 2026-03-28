@@ -864,3 +864,57 @@ body::before {
     align-items: center;
   }
 }
+.cicd-badge {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  z-index: 30;
+}
+
+.cicd-badge__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 12px rgba(74, 222, 128, 0.9);
+  animation: cicdPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes cicdPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.7;
+  }
+}
+
+[data-theme="dark"] .cicd-badge {
+  background: rgba(10, 18, 36, 0.55);
+  border: 1px solid rgba(131, 160, 255, 0.18);
+  color: #f4f7ff;
+}
+
+@media (max-width: 640px) {
+  .cicd-badge {
+    left: 12px;
+    bottom: 12px;
+    font-size: 0.78rem;
+    padding: 8px 12px;
+  }
+}
